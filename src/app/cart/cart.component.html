@@ -1,0 +1,88 @@
+
+
+
+<div class="container">
+  <div class="row">
+    <div  class="col-7 my-5">
+      <h2 style="font-family: 'Times New Roman', Times, serif;" class="text-center mt-5">Cart Products</h2>
+      <table style="font-family: Verdana, Geneva, Tahoma, sans-serif;" class="table my-5">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Id</th>
+            <th scope="col">Product</th>
+            <th scope="col">Image</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cart of cartItem ; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{cart.id}}</td>
+            <td>{{cart.title}} </td>
+            <td><img [src]="cart.image" alt="Product Image" width="50"></td>
+
+            <td>
+              <div class="d-flex">
+
+                <button (click)="decrementCart(cart.id)" class="btn">-</button>
+             <input type="text" class=" text-dark" [value]="cart.quantity" style="max-width: 45px;">
+                <button (click)="incrementCart(cart.id)" class="btn">+</button>
+
+              </div>
+
+
+            </td>
+            <td>{{cart.grandTotal}} </td>
+            <td><button (click)="deleteCart(cart.id)" class="btn btn-danger btn-sm">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col"></div>
+    <div class="col-4 my-5 p-5 shadow">
+      <h3 style="font-family: 'Times New Roman', Times, serif;" class="text-center">Cart Summary</h3>
+      <h4 style="font-family: 'Times New Roman', Times, serif;" class="text-center">Total Price: {{cartTotal}}</h4>
+      <div class="text-center">
+
+
+        <!-- Modal Trigger Button -->
+        <button class="btn btn-success my-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">CheckOut</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Order Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <input type="text" placeholder="Name" class="form-control mb-3 w-75">
+        <input type="text" placeholder="Name" class="form-control mb-3 w-75">
+        <input type="text" placeholder="Name" class="form-control mb-3 w-75">
+        <h4 style="font-family: 'Times New Roman', Times, serif;">Total Price:{{cartTotal}} </h4>
+
+        <div class="text-center my-5">
+          <button class="btn btn-primary fs-0 text-center">Make Payment</button>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-paypal [config]="payPalConfig"></ngx-paypal>
+
+<!-- Bootstrap Bundle with Popper (for JavaScript functionality) -->
+

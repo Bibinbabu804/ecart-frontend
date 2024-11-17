@@ -1,0 +1,46 @@
+<div  class="container">
+  <div class="row" *ngIf="products.length > 0 ">
+
+
+
+    <div *ngFor="let product of products" class="col-4 mt-5">
+      <div class="card h-40 ">
+        <!-- Product image-->
+        <img style="width: 200px"  class="card-img-top" [src]="product.image" alt="..." />
+        <!-- Product details-->
+        <div class="card-body p-4">
+            <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder">{{product.title}}</h5>
+                <!-- Product price-->
+              {{product.price}}
+            </div>
+        </div>
+        <!-- Product actions-->
+        <div class="d-flex justify-content-evenly card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a></div>
+            <div (click)="deleteProduct(product.id)" class="text-center"><a class="btn btn-outline-dark mt-auto" >Delete</a></div>
+        </div>
+    </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+<!-- empty wishlitst  -->
+
+<div class="container" *ngIf="products.length==0">
+
+      <img width="100%" src="https://i.pinimg.com/originals/f6/e4/64/f6e464230662e7fa4c6a4afb92631aed.png"
+       alt="">
+       <div class="text-center">
+
+
+       <button class="btn btn-dark m-3">Explore more</button>
+      </div>
+
+
+</div>

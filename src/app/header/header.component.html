@@ -1,0 +1,108 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <img
+          src="https://img.freepik.com/premium-vector/e-commerce-logo-icon-cart-icon-cart-logo-shopping-logo_526569-813.jpg"
+          height="70"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+        <span style="font-family: 'Times New Roman', Times, serif;" class="fs-3"> E-cart</span>
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Projects</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <input type="text" placeholder="search" class="form-control me-5 rounded">
+      <!-- Icon -->
+      <a class="text-reset me-3" href="user/cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <!-- Notifications -->
+      <div class="dropdown">
+        <a
+          data-mdb-dropdown-init
+          class="text-reset me-3 dropdown-toggle hidden-arrow"
+          href="/user/wishlist"
+          id="navbarDropdownMenuLink"
+          role="button"
+          aria-expanded="false"
+        >
+
+          <img width="30px " height="30px" src="https://i.pinimg.com/564x/3b/38/a6/3b38a660e038d1ac41ae9dfbd21da8be.jpg" alt="">
+          <span class="badge rounded-pill badge-notification bg-danger">1</span>
+        </a>
+
+      </div>
+      <!-- Avatar -->
+      <div class="dropdown">
+        <a
+          data-mdb-dropdown-init
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="user/login"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          aria-expanded="false"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/861/861925.png"
+            class="rounded-circle"
+            height="25"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+            <a class="dropdown-item" href="#">My profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
